@@ -14,13 +14,13 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: 'redscientistlabs/RTCV'
-        ref: '51x'
+        ref: '51X'
         path: 'RTCV'
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.1
     - name: Restore packages in RTCV
       run: msbuild /t:restore '.\RTCV\'
-    - name: Restore packages in dolphin-vanguard
+    - name: Restore packages in Bizhawk
       run: msbuild /t:restore '.\Bizhawk\Bizhawk.sln'
-    - name: Build with MSBuild
+    - name: Build current target with MSBuild
       run: msbuild '.\Bizhawk\Bizhawk.sln'
